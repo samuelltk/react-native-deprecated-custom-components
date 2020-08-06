@@ -1004,6 +1004,7 @@ var Navigator = React.createClass({
     if (!sceneConfig) {
       sceneConfig = this.state.sceneConfigStack[sceneConfigIndex - 1];
     }
+    if (!sceneConfig) return;
     var styleToUse = {};
     var useFn = index < fromIndex || index < toIndex ?
       sceneConfig.animationInterpolators.out :
