@@ -996,9 +996,7 @@ var Navigator = React.createClass({
 
   _transitionSceneStyle: function(fromIndex, toIndex, progress, index) {
     var viewAtIndex = this._sceneRefs[index];
-    if (viewAtIndex === null || viewAtIndex === undefined) {
-      return;
-    }
+    if (!viewAtIndex) return;
     // Use toIndex animation when we move forwards. Use fromIndex when we move back
     var sceneConfigIndex = fromIndex < toIndex ? toIndex : fromIndex;
     var sceneConfig = this.state.sceneConfigStack[sceneConfigIndex];
